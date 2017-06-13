@@ -1,0 +1,28 @@
+---
+title: "README"
+author: "Cristian Mejia"
+date: "June 13, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Heatmap for topic models
+We calculate the cosine similarity manually (not by using cosine functions)
+To do so, first we have to normalize the vectors And then compute the "cross product" as defined by R... That is actualy the "DOT product" of two vectors!!!
+
+### Inputs
+
+This code takes as inputs named lists of data frames. 1 list per axis
+Each data frame containing keyword information of the clusters, where the first column is for the keyword(term) and the second, for the weigth (relevance) regardless is a probabiliy or tficf score. 
+
+No need to be normalized, as can normalize from here.
+The keywords MUST BE IN DECREASING ORDER!!!
+
+### Outputs
+It outputs:
+* The similarity matrix
+* The similirity scores from the highest
+* An interactive visualization
