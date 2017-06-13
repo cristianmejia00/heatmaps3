@@ -1,0 +1,10 @@
+Package: heatmaps3
+Title: Creates heatmpas form lists of keywords
+Version: 0.0.0.9000
+Authors@R: person("Cristian", "Mejia", email = "cristianmejia00@gmail.com", role = c("aut", "cre"))
+Description: Creates a heatmap by comparing list of dataframes of the main keywords of a topic model.
+Depends: R (>= 3.4.0), plyr, reshape2, plotly, slam, tm, data.table
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1.9000
