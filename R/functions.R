@@ -23,7 +23,7 @@ get_dtm_dataframes <- function(x){
     return(framed)})}
 
 ##############################################################################
-# Core Functions
+# Core functions
 ##############################################################################
 #' Get the similarity matrix
 #'
@@ -58,7 +58,7 @@ heatmap_matrix <- function(x_axis_lodf, y_axis_lodf, x_label = "X", y_label = "Y
   colnames(similarity_txc_named) <- sapply(1:ncol(similarity_txc), function(x) paste(x_label, as.character(x)))
   
   # write the matrix
-  if (report == TRUE) {write.csv(similarity_txc_named, file="heatmap_matrix.csv")}
+  if (report == TRUE) {write.csv(similarity_txc_named, file=similarity_matrix)}
   
   # Output the matrix
   return(similarity_txc)
