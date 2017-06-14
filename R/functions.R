@@ -126,6 +126,7 @@ heatmap_list <- function(similarity_matrix, x_axis_lodf, y_axis_lodf, report = T
 #' @param edges a melted similarity matrix created with \code{\link{heatmap_list}}
 #' @param x_label default to "X". a name for the values in the X axis
 #' @param y_label default to "Y". a name for the values in the Y axis
+#' @param appears default to 1 (show all), the opacity of the chart. A vector with the opacity of each dot can also be added
 #' @export
 heatmap_viz <- function(edges, x_label = "X", y_label = "Y", appears = 1){
   #Plot interactive scatter plot that behaves as heatmap
