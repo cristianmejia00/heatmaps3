@@ -127,8 +127,9 @@ heatmap_list <- function(similarity_matrix, x_axis_lodf, y_axis_lodf, report = T
 #' @param x_label default to "X". a name for the values in the X axis
 #' @param y_label default to "Y". a name for the values in the Y axis
 #' @param appears default to 1 (show all), the opacity of the chart. A vector with the opacity of each dot can also be added
+#' @param size default to 6. Size of each data dot in pixel
 #' @export
-heatmap_viz <- function(edges, x_label = "X", y_label = "Y", appears = 1, size = 1){
+heatmap_viz <- function(edges, x_label = "X", y_label = "Y", appears = 1, size = 6){
   #Plot interactive scatter plot that behaves as heatmap
   p <- plot_ly(edges, x=~X, y=~Y,
                type="scatter",
