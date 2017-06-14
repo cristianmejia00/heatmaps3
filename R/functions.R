@@ -127,17 +127,19 @@ heatmap_list <- function(similarity_matrix, x_axis_lodf, y_axis_lodf, report = T
 #' @param x_label default to "X". a name for the values in the X axis
 #' @param y_label default to "Y". a name for the values in the Y axis
 #' @export
-heatmap_viz <- function(edges, x_label = "X", y_label = "Y"){
+heatmap_viz <- function(edges, x_label = "X", y_label = "Y", appears = 1){
   #Plot interactive scatter plot that behaves as heatmap
   p <- plot_ly(edges, x=~X, y=~Y, 
                type="scatter", 
                mode="markers", 
-               marker = list(symbol = 1),
-               color = ~value, colors = colorRamp(c("white", "red")),
-               #size = ~value,
+               marker = list(symbol = 1, opacity = appears),
+               
+               color = ~value, 
+               colors = colorRamp(c("white", "green", "red")),
                text = ~paste("Similarity: ", round(value, 3),
                              "<br>X_keywords: ", keysX, 
                              "<br>Y_keywords: ", keysY))
+  
   p <- layout(p, 
               xaxis = list(categoryarray = colnames(edges), 
                            categoryorder = "array",
@@ -147,3 +149,6 @@ heatmap_viz <- function(edges, x_label = "X", y_label = "Y"){
                            title = y_label))
   return(p)
 }
+
+heatmap <- heatmap_viz(h_edges, x_label, y_label)
+heatmap
